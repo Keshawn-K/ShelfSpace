@@ -6,7 +6,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "axios": "^1.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -25,5 +26,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://backend:8000"
+  "proxy": "http://127.0.0.1:8000"
 }

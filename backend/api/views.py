@@ -47,6 +47,13 @@ class GenreViewSet(viewsets.ModelViewSet):
 
 
 class MediaItemViewSet(viewsets.ModelViewSet):
+    """
+    Browse, search, and filter the media catalog.
+    
+    Supports filtering by media_type, genre, year.
+    Supports search by title, creator, description.
+    Supports ordering by title, year, created_at.
+    """
     queryset = MediaItem.objects.all()
     serializer_class = MediaItemSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
@@ -58,6 +65,11 @@ class MediaItemViewSet(viewsets.ModelViewSet):
 
 
 class ShelfViewSet(viewsets.ModelViewSet):
+    """
+    Manage personal media shelves.
+    
+    Automatically creates default shelves (Want to Try, In Progress, Finished) on registration.
+    """
     queryset = Shelf.objects.all()
     serializer_class = ShelfSerializer
     permission_classes = [permissions.IsAuthenticated, IsOwnerOrReadOnly]
@@ -94,6 +106,9 @@ class ShelfViewSet(viewsets.ModelViewSet):
 
 
 class ShelfItemViewSet(viewsets.ModelViewSet):
+    """
+    Manage items within shelves including ratings and reviews.
+    """
     queryset = ShelfItem.objects.all()
     serializer_class = ShelfItemSerializer
     permission_classes = [permissions.IsAuthenticated, IsOwnerOrReadOnly]
