@@ -107,4 +107,12 @@ SPECTACULAR_SETTINGS = {
     'TITLE': 'ShelfSpace API',
     'DESCRIPTION': 'A personal media collection and discovery platform',
     'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    'COMPONENT_SPLIT_REQUEST': True,
+    'TAGS': [
+        {'name': 'Auth', 'description': 'Authentication endpoints'},
+        {'name': 'Media', 'description': 'Media catalog and discovery'},
+        {'name': 'Shelves', 'description': 'Personal collection management'},
+        {'name': 'Users', 'description': 'User management'},
+    ],
 }
