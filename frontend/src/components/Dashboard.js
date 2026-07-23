@@ -65,7 +65,7 @@ function Dashboard() {
         </div>
         <div style={{ border: '1px solid #ddd', borderRadius: '8px', padding: '20px', textAlign: 'center', background: 'white' }}>
           <h3 style={{ margin: '0 0 10px 0', fontSize: '14px', color: '#666' }}>Average Rating</h3>
-          <p style={{ margin: 0, fontSize: '36px', fontWeight: 'bold', color: '#ff9800' }}>{stats.averageRating} ⭐</p>
+          <p style={{ margin: 0, fontSize: '36px', fontWeight: 'bold', color: '#ff9800' }}>{stats.averageRating} </p>
         </div>
       </div>
 
