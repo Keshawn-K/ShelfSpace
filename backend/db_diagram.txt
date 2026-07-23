@@ -1,0 +1,59 @@
+ShelfSpace Database Schema
+
+Table: users (Django built-in)
+- id (PK)
+- username
+- email
+- password
+- first_name
+- last_name
+- is_active
+- date_joined
+
+Table: api_userprofile
+- id (PK)
+- user_id (FK -> users.id, OneToOne)
+- avatar
+- bio
+
+Table: api_mediatype
+- id (PK)
+- name (unique)
+
+Table: api_genre
+- id (PK)
+- name (unique)
+
+Table: api_mediaitem
+- id (PK)
+- title
+- creator
+- media_type_id (FK -> api_mediatype.id)
+- genre_id (FK -> api_genre.id, null)
+- year
+- description
+- cover_image
+- created_at
+
+Table: api_shelf
+- id (PK)
+- user_id (FK -> users.id)
+- name
+- is_default
+- created_at
+
+Table: api_shelfitem
+- id (PK)
+- shelf_id (FK -> api_shelf.id)
+- media_item_id (FK -> api_mediaitem.id)
+- rating (1-5, nullable)
+- review_text
+- added_at
+
+Relationships:
+- users 1:1 api_userprofile
+- users 1:N api_shelf
+- api_mediatype 1:N api_mediaitem
+- api_genre 1:N api_mediaitem
+- api_shelf 1:N api_shelfitem
+- api_mediaitem 1:N api_shelfitem

@@ -106,12 +106,9 @@ class ShelfViewSet(viewsets.ModelViewSet):
 
 
 class ShelfItemViewSet(viewsets.ModelViewSet):
-    """
-    Manage items within shelves including ratings and reviews.
-    """
     queryset = ShelfItem.objects.all()
     serializer_class = ShelfItemSerializer
-    permission_classes = [permissions.IsAuthenticated, IsOwnerOrReadOnly]
+    permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
         return ShelfItem.objects.filter(shelf__user=self.request.user)
