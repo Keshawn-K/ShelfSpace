@@ -61,7 +61,7 @@ WSGI_APPLICATION = 'shelfspace.wsgi.application'
 
 
 
-DDATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
