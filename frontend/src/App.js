@@ -4,6 +4,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Explore from './components/Explore';
 import Shelves from './components/Shelves';
+import Dashboard from './components/Dashboard';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('access_token'));
@@ -35,6 +36,7 @@ function App() {
             <div>
               <Link to="/explore" style={{ color: 'white', marginRight: '20px', textDecoration: 'none' }}>Explore</Link>
               <Link to="/shelves" style={{ color: 'white', marginRight: '20px', textDecoration: 'none' }}>My Shelves</Link>
+              <Link to="/dashboard" style={{ color: 'white', marginRight: '20px', textDecoration: 'none' }}>Dashboard</Link>
               <button onClick={handleLogout} style={{ padding: '8px 16px', cursor: 'pointer' }}>
                 Logout
               </button>
@@ -46,6 +48,7 @@ function App() {
           <Route path="/register" element={isLoggedIn ? <Navigate to="/explore" /> : <Register />} />
           <Route path="/explore" element={isLoggedIn ? <Explore /> : <Navigate to="/login" />} />
           <Route path="/shelves" element={isLoggedIn ? <Shelves /> : <Navigate to="/login" />} />
+          <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/login" />} />
           <Route path="/" element={<Navigate to={isLoggedIn ? "/explore" : "/login"} />} />
         </Routes>
       </div>
